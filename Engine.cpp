@@ -199,7 +199,7 @@ void Engine::GamеMenu()
     game::GameMenu mymenu(window, 950, 250, 80, 100, name_menu[language]);
     // Установка цвета отображения меню
 
-    mymenu.setColorTextMenu(sf::Color(227, 171, 0), sf::Color::Yellow, sf::Color::Black);
+    mymenu.setColorTextMenu(sf::Color(192, 192, 192), sf::Color::Yellow, sf::Color::Black);
     mymenu.AlignMenu(1);
 
     sf::RectangleShape background(sf::Vector2f(1280, 720));
@@ -385,14 +385,16 @@ void Engine::About_Game()
         About.display();
     }
 }
-
-bool Engine::GamеEndMenu(sf::String str, sf::Color col)
+//j
+kbool Engine::GamеEndMenu(sf::String str, sf::Color col)
 {
     std::vector<std::vector<sf::String>> name_menu{ {{ L"Рестарт",L"Выход"},{ L"Рестарт",L"Вихід"},{ L"Restart",L"Exit"} } };
 
     // Объект меню
     game::GameMenu mymenu(*window, static_cast<float>(window->getSize().x / 2), 300, 45, 90, name_menu[language]);
     // Установка цвета отображения меню
+    mymenu.setColorTextMenu(sf::Color(255, 255, 102), sf::Color::Yellow, sf::Color::Black);
+    mymenu.AlignMenu(1);
     mymenu.setColorTextMenu(sf::Color(227, 171, 0), sf::Color::Yellow, sf::Color::Black);
     mymenu.AlignMenu(1);
 
