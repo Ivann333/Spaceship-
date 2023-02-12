@@ -186,25 +186,25 @@ void Engine::draw()
 
 void Engine::GamеMenu()
 {
-    sf::RenderWindow window(sf::VideoMode(1280, 720), L"Пчела на работе", sf::Style::Fullscreen);
+    sf::RenderWindow window(sf::VideoMode(1280, 720), L"spaceship", sf::Style::Default);
     window.requestFocus();
     window.setActive(true);
     window.setMouseCursorVisible(false);
 
     std::vector<std::vector<sf::String>>name_menu{ { L"Игра",L"Настройки", L"Правила",L"Выход" },
         { L"Гра",L"Налаштування", L"Правила",L"Вихід" },{ L"Game",L"Settings", L"Rules",L"Exit" } };
-    std::array<sf::String, 3> str{ L"Пчела на работе",L"Бджола на роботі", L"Bee at work" };
+    std::array<sf::String, 3> str{ L"Spaceship",L"Spaceship", L"Spaceship" };
     bool switch_language = false; // Смена языка
     // Объект меню
     game::GameMenu mymenu(window, 950, 250, 80, 100, name_menu[language]);
     // Установка цвета отображения меню
 
     mymenu.setColorTextMenu(sf::Color(227, 171, 0), sf::Color::Yellow, sf::Color::Black);
-    mymenu.AlignMenu(2);
+    mymenu.AlignMenu(1);
 
     sf::RectangleShape background(sf::Vector2f(1280, 720));
         
-    background.setTexture(& AssetManager::GetTexture("image/bee1.jpg"));
+    background.setTexture(& AssetManager::GetTexture("image/bgmenu.jpeg"));
 
     sf::Text Titul;
     Titul.setFont(AssetManager::GetFont("font/troika.otf"));
@@ -240,7 +240,7 @@ void Engine::GamеMenu()
         if (switch_language) {
            
                 for (int i = 0; i < 4; i++) mymenu.setNameMenu(name_menu[language][i], i);
-                mymenu.AlignMenu(2);
+                mymenu.AlignMenu(1);
                 Titul.setString(str[language]);
                 Titul.setPosition(640 - (Titul.getLocalBounds().width / 2), 5);              
         }
@@ -256,7 +256,7 @@ void Engine::GamеMenu()
 
 void Engine::Options()
 {
-    sf::RenderWindow Options(sf::VideoMode(1280, 720), L"Настройки", sf::Style::Fullscreen);
+    sf::RenderWindow Options(sf::VideoMode(1280, 720), L"Настройки", sf::Style::Default);
     Options.requestFocus();
     sf::RectangleShape background_opt(sf::Vector2f(1280, 720));
    
@@ -349,7 +349,7 @@ switch (language)
 
 void Engine::About_Game()
 {
-    sf::RenderWindow About(sf::VideoMode(1280, 720), L"О игре", sf::Style::Fullscreen);
+    sf::RenderWindow About(sf::VideoMode(1280, 720), L"О игре", sf::Style::Default);
     About.requestFocus();
     sf::RectangleShape background_ab(sf::Vector2f(1280, 720));
     
@@ -394,7 +394,7 @@ bool Engine::GamеEndMenu(sf::String str, sf::Color col)
     game::GameMenu mymenu(*window, static_cast<float>(window->getSize().x / 2), 300, 45, 90, name_menu[language]);
     // Установка цвета отображения меню
     mymenu.setColorTextMenu(sf::Color(227, 171, 0), sf::Color::Yellow, sf::Color::Black);
-    mymenu.AlignMenu(2);
+    mymenu.AlignMenu(1);
 
     sf::Text Titul;
   

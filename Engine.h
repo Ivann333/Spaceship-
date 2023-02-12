@@ -17,7 +17,7 @@ class Engine
 	long long null_number = std::chrono::system_clock::now().time_since_epoch().count();
 	std::default_random_engine rnd= std::default_random_engine(static_cast<unsigned int>(null_number));
 	
-	std::unique_ptr<sf::RenderWindow> window = std::make_unique<sf::RenderWindow>(sf::VideoMode(1280, 720), L"ѕчела на работе", sf::Style::Fullscreen);
+	std::unique_ptr<sf::RenderWindow> window = std::make_unique<sf::RenderWindow>(sf::VideoMode(1280, 720), L"ѕчела на работе", sf::Style::Default);
 	
 	std::unique_ptr<GameSound> gsound = std::make_unique<GameSound>(); // «вуковые эффекты
 		
@@ -37,7 +37,7 @@ class Engine
 	std::array<std::array<sf::String, 3>, 2> strgameEnd{ {{L"—пасибо за мЄд !!!",L"ƒ€куЇмо за мед !!!",L"Thanks for the honey !!!"} ,{L"”лей погиб !",L"¬улик загинув !",L"The hive died !!!"}} };
 	std::array<sf::RectangleShape, 20> blob;
 	std::array<float, 20> speedBlob{0};
-	int language = 0;          // €зык
+	int language = 1;          // €зык
     void GamеMenu();
 	void resetBlob(size_t index);
 	void resetGame();
