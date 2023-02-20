@@ -186,7 +186,7 @@ void Engine::draw()
 
 void Engine::GamеMenu()
 {
-    sf::RenderWindow window(sf::VideoMode(1280, 720), L"spaceship", sf::Style::Default);
+    sf::RenderWindow window(sf::VideoMode(1280, 720), L"Spaceship", sf::Style::Default);
     window.requestFocus();
     window.setActive(true);
     window.setMouseCursorVisible(false);
@@ -196,11 +196,11 @@ void Engine::GamеMenu()
     std::array<sf::String, 3> str{ L"Spaceship",L"Spaceship", L"Spaceship" };
     bool switch_language = false; // Смена языка
     // Объект меню
-    game::GameMenu mymenu(window, 950, 250, 80, 100, name_menu[language]);
+    game::GameMenu mymenu(window, 640, 225, 80, 100, name_menu[language]);
     // Установка цвета отображения меню
 
-    mymenu.setColorTextMenu(sf::Color(192, 192, 192), sf::Color::Yellow, sf::Color::Black);
-    mymenu.AlignMenu(1);
+    mymenu.setColorTextMenu(sf::Color(192, 192, 192), sf::Color::Cyan, sf::Color::Black);
+    mymenu.AlignMenu(2);
 
     sf::RectangleShape background(sf::Vector2f(1280, 720));
         
@@ -209,7 +209,7 @@ void Engine::GamеMenu()
     sf::Text Titul;
     Titul.setFont(AssetManager::GetFont("font/troika.otf"));
     game::TextFormat FText;
-    FText.menu_text_color = sf::Color(227, 171, 0);
+    FText.menu_text_color = sf::Color::Cyan;
     InitText(Titul, 640 - (Titul.getLocalBounds().width / 2), 5, str[language], FText);
     Titul.setString(str[language]);
     Titul.setPosition(640 - (Titul.getLocalBounds().width / 2), 5);
@@ -240,7 +240,7 @@ void Engine::GamеMenu()
         if (switch_language) {
            
                 for (int i = 0; i < 4; i++) mymenu.setNameMenu(name_menu[language][i], i);
-                mymenu.AlignMenu(1);
+                mymenu.AlignMenu(2);
                 Titul.setString(str[language]);
                 Titul.setPosition(640 - (Titul.getLocalBounds().width / 2), 5);              
         }
@@ -256,7 +256,7 @@ void Engine::GamеMenu()
 
 void Engine::Options()
 {
-    sf::RenderWindow Options(sf::VideoMode(1280, 720), L"Настройки", sf::Style::Default);
+    sf::RenderWindow Options(sf::VideoMode(1280, 720), L"Spaceship", sf::Style::Default);
     Options.requestFocus();
     sf::RectangleShape background_opt(sf::Vector2f(1280, 720));
    
@@ -269,9 +269,9 @@ void Engine::Options()
     background_opt.setTexture(&AssetManager::GetTexture("image/menu1.jpg"));
     
     // Объект меню
-    game::GameMenu optmenu(Options, 640, 250, 80, 100, name_menu);
+    game::GameMenu optmenu(Options, 640, 210, 80, 100, name_menu);
     // Установка цвета отображения меню
-    optmenu.setColorTextMenu(sf::Color::Cyan, sf::Color::Magenta, sf::Color::Black);
+    optmenu.setColorTextMenu(sf::Color(192, 192, 192), sf::Color::Cyan, sf::Color::Black);
     optmenu.AlignMenu(2);
     sf::Text Titul;
    
@@ -349,7 +349,7 @@ switch (language)
 
 void Engine::About_Game()
 {
-    sf::RenderWindow About(sf::VideoMode(1280, 720), L"О игре", sf::Style::Default);
+    sf::RenderWindow About(sf::VideoMode(1280, 720), L"Spaceship", sf::Style::Default);
     About.requestFocus();
     sf::RectangleShape background_ab(sf::Vector2f(1280, 720));
     
@@ -385,8 +385,8 @@ void Engine::About_Game()
         About.display();
     }
 }
-//j
-kbool Engine::GamеEndMenu(sf::String str, sf::Color col)
+
+bool Engine::GamеEndMenu(sf::String str, sf::Color col)
 {
     std::vector<std::vector<sf::String>> name_menu{ {{ L"Рестарт",L"Выход"},{ L"Рестарт",L"Вихід"},{ L"Restart",L"Exit"} } };
 
@@ -394,9 +394,9 @@ kbool Engine::GamеEndMenu(sf::String str, sf::Color col)
     game::GameMenu mymenu(*window, static_cast<float>(window->getSize().x / 2), 300, 45, 90, name_menu[language]);
     // Установка цвета отображения меню
     mymenu.setColorTextMenu(sf::Color(255, 255, 102), sf::Color::Yellow, sf::Color::Black);
-    mymenu.AlignMenu(1);
+    mymenu.AlignMenu(2);
     mymenu.setColorTextMenu(sf::Color(227, 171, 0), sf::Color::Yellow, sf::Color::Black);
-    mymenu.AlignMenu(1);
+    mymenu.AlignMenu(2);
 
     sf::Text Titul;
   

@@ -17,7 +17,7 @@ class Engine
 	long long null_number = std::chrono::system_clock::now().time_since_epoch().count();
 	std::default_random_engine rnd= std::default_random_engine(static_cast<unsigned int>(null_number));
 	
-	std::unique_ptr<sf::RenderWindow> window = std::make_unique<sf::RenderWindow>(sf::VideoMode(1280, 720), L"ѕчела на работе", sf::Style::Default);
+	std::unique_ptr<sf::RenderWindow> window = std::make_unique<sf::RenderWindow>(sf::VideoMode(1280, 720), L"Spaceship", sf::Style::Default);
 	
 	std::unique_ptr<GameSound> gsound = std::make_unique<GameSound>(); // «вуковые эффекты
 		

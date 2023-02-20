@@ -25,7 +25,7 @@ void game::GameMenu::AlignMenu(int posx)
 			nullx = 0;
 			break;
 		case 1:
-			nullx = (640 - mainMenu[i].getLocalBounds().width / 2);
+			nullx = mainMenu[i].getLocalBounds().width;
 			break;
 		case 2:
 			nullx = menu_X - (mainMenu[i].getLocalBounds().width / 2);
