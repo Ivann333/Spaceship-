@@ -55,7 +55,7 @@ public:
 	
 	Engine()
 	{
-		background_play.setTexture(&AssetManager::GetTexture("image/background.jpg"));
+		background_play.setTexture(&AssetManager::GetTexture("image/bgplay.jpg"));
 		window->setMouseCursorVisible(false);
 		flowers.setRadius(50);
 		flowers.setPosition(1050, 230);

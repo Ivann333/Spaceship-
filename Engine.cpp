@@ -145,8 +145,8 @@ void Engine::draw()
     auto SPBee = Bee->getBee();
     window->clear();
     window->draw(background_play);
-    window->draw(flowers);
-    window->draw(beehive);
+    //window->draw(flowers);
+    //window->draw(beehive);
 
     if (!Bee->getMead() && SPBee.getGlobalBounds().intersects(flowers.getGlobalBounds())) barFlow.draw();
 
@@ -161,26 +161,26 @@ void Engine::draw()
     if (SPBee.getGlobalBounds().intersects(beehive.getGlobalBounds()))
     {
         gsound->play(1);
-        barBeehive.draw();
-        barBeehive2.draw();
+        //barBeehive.draw();
+        //barBeehive2.draw();
     }
     else
     {
         gsound->stop(1);
     }
 
-    Bee->draw();
+    //Bee->draw();
 
    
 
     for (size_t i = 0; i < size(blob); i++)
     {
-        window->draw(blob[i]);
+        //window->draw(blob[i]);
     }
 
    
 
-    barTime.draw();
+    //barTime.draw();
     window->display();
 }
 
