@@ -35,10 +35,10 @@ public:
 		auto& idleSplash = SplashAnim.CreateAnimation("idleSplash", "image/maker.png", sf::seconds(1), false);
 		idleSplash.AddFrames(sf::Vector2i(0, 0), SplashSize, 6, 1);
 		// Анимация пчелы
-		auto& idleForward = BeeAnim.CreateAnimation("idleForward", "image/SPRITESHEET.png", sf::seconds(1), true);
-		idleForward.AddFrames(sf::Vector2i(0, 0), spriteSize, 6, 1);
-		auto& idleBack = BeeAnim.CreateAnimation("idleBack", "image/SPRITESHEET.png", sf::seconds(1), true);
-		idleBack.AddFrames(sf::Vector2i(0, 100), spriteSize, 6, 1);
+		auto& idleForward = BeeAnim.CreateAnimation("idleForward", "image/spriteship.png", sf::seconds(1), true);
+		idleForward.AddFrames(sf::Vector2i(0, 40), spriteSize, 7, 1);
+		auto& idleBack = BeeAnim.CreateAnimation("idleBack", "image/spriteship.png", sf::seconds(1), true);
+		idleBack.AddFrames(sf::Vector2i(0, 40), spriteSize, 7, 1);
 		beemead.setTexture(&AssetManager::GetTexture("image/mead.png"));
 	}
 

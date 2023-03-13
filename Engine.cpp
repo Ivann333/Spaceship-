@@ -169,7 +169,7 @@ void Engine::draw()
         gsound->stop(1);
     }
 
-    //Bee->draw();
+    Bee->draw();
 
    
 
